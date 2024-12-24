@@ -1,0 +1,32 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>jbr.hax.diaryStudyPlugin</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>DiaryStudyPlugin</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor>jbr-hax</vendor>
+
+    <description><![CDATA[
+     <p>This IntelliJ IDEA plugin is designed for diary studies, enabling users to participate in surveys seamlessly throughout their day.</p>
+
+     <p>Users can open and complete surveys conducted via third-party service <a href="https://www.qualtrics.com/privacy-statement/">Qualtrics</a> at their convenience while receiving up to three automated reminders daily for timely submissions. An additional reminder prompts users to complete an end-of-day survey.</p>
+
+    <p>The plugin includes customizable settings, allowing users to configure reminder times to suit their schedules.</p>
+     ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <notifications>
+            <group id="Survey Notification Group" displayType="STICKY_BALLOON" />
+        </notifications>
+        <postStartupActivity implementation="PluginInitializer" />
+        <toolWindow id="Diary Study"
+                    factoryClass="jbr.hax.diarystudyplugin.toolWindow.DiaryStudyToolWindowFactory" anchor="right"/>
+
+    </extensions>
+</idea-plugin>
