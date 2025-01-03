@@ -95,6 +95,11 @@ class DayEndNotificationDialog(project: Project): NotificationDialog(project) {
     override val message = "Please take a moment to complete the survey."
     override val url = DAY_END_SURVEY_URL
 
+    init {
+        init()
+        super.init()
+    }
+
     override fun showReminder() {
         DayEndSurveyNotifier().showNotification(project)
     }
