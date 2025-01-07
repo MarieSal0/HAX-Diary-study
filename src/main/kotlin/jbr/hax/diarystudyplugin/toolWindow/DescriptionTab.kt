@@ -156,7 +156,7 @@ class DescriptionTab(private val toolWindow: ToolWindow) {
     private fun getDayEndSurveyDescriptionText(width: Int): String {
         return "<html><body style='width: ${(0.65 * width).toInt()} px;'><font face=Monochrome>" +
                 "<strong>End of the day survey</strong><br><br>" +
-                "The plugin will remind you to fill in the end-of-the-day survey at the set time.<br>" +
+                "The plugin will remind you to fill in the end of the day survey at the set time.<br>" +
                 "However, you can take it any time you prefer by clicking the button below.</font></body></html>"
     }
 
@@ -168,7 +168,7 @@ class DescriptionTab(private val toolWindow: ToolWindow) {
      */
     private fun getSettingsDescriptionText(width: Int): String {
         return "<html><body style='width: ${(0.65 * width).toInt()} px;'><font face=Monochrome>" +
-                "<strong>Set Up the notifications</strong><br><br>" +
-                "You can change the time when you prefer to get your reminders.</font></body></html>"
+                "<strong>Set up the notifications</strong><br><br>" +
+                "You can change your reminder times to whenever you prefer.</font></body></html>"
     }
 }

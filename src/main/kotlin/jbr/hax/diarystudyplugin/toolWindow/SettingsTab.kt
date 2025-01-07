@@ -76,13 +76,20 @@ class SettingsTab(private val toolWindow: ToolWindow) {
     }
 
     private fun areTimingsValid(timings: List<Pair<Int, JTextField>>): Boolean {
-        for (i in 1 until timings.size) {
+        for (i in 1 until timings.size-1) {
             if (timings[i].first - timings[i - 1].first < 60) {
                 timings[i].second.background = Color.RED
                 timings[i - 1].second.background = Color.RED
                 return false
             }
         }
+        // Check if end of workday survey is after the latest during the day survey and at least 30min that
+        if (timings[4].first <= timings[3].first && timings[4].first - timings[3].first < 30) {
+            timings[4].second.background = Color.RED
+            timings[3].second.background = Color.RED
+            return false
+        }
+
         return true
     }
 
